@@ -1,0 +1,23 @@
+ALGORITHM insrt_sorting
+VAR
+    i , j , aux : INTEGER;
+    tab : ARRAY_OF INTEGER;
+BEGIN
+        // remplissage du tableau :
+    FOR i FROM 0 TO tab.length-1 DO
+        Read (tab[i]);
+    END_FOR
+    
+        // tri par insertion:
+    FOR i FROM 1 TO tab.length-1 DO
+        aux := tab[i];
+        j := i-1;
+        WHILE ((tab [j] > aux) AND (j > 0)) DO
+            tab[j] := tab [j+1];
+            j := j-1;
+        END_WHILE
+        tab[j+1] := aux;
+    END_FOR
+
+
+END
